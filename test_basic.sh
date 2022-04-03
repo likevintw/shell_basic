@@ -51,6 +51,7 @@ fi
 [[ "string1" == "string1" ]] && \
     echo "string comparsion 2, ok" || \
     echo "sring comparsion 2, error"
+    
 # if elif else example 1
 var=10
 if [ $var -gt 0 ]
@@ -122,13 +123,21 @@ fi
 
 # array example 1
 # pass, do nothing :
-test_array=(0 1 2 3 4 5)
+array=(0 1 2 3 4 5)
 # show array size
-[[ ${#test_array[@]} == 6 ]] && : || echo "array example 1, error"
+[[ ${#array[@]} == 6 ]] && : || echo "array example 1, error"
 check=0
-for element in ${test_array[@]}
+for element in ${array[@]}
 do
     [[ $element == $check ]] && : || echo "array example 1, error"
     ((check++))
 done
 echo "array example 1, ok"
+
+# array example 2
+array2[0]="hello"
+array2[1]="world"
+# echo ${array2[*]} # show all element in the array
+# # show array size
+[[ ${#array2[@]} == 2 ]] && : || echo "array example 2, error"
+echo "array example 2, ok"

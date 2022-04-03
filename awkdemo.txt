@@ -4,3 +4,8 @@ A003 火車 FJDKE3AK34940
 A004 超機車 FFJJEEE99300
 A005 飛機 AIRP33333900
 A006 坦克 TANK00000001
+Name Domain
+Deepak Banking
+Neha Telecom
+Vijay Finance
+Guru Migration
