@@ -25,16 +25,17 @@ else
 fi
 
 # statement
+# greater is \>, not >
 if [ 5 -eq 5 ]; then echo "statement equal, ok" ;fi
 if [ 5 == 5 ]; then echo "statement equal, ok" ;fi
 if [ 5 -ne 3 ]; then echo "statement non-equal, ok";fi
 if [ 5 != 3 ]; then echo "statement non-equal, ok";fi
 if [ 5 -gt 3 ]; then echo "statement greater, ok" ;fi
-if [ 5 > 3 ]; then echo "statement greater, ok" ;fi
+if [ 5 \> 3 ]; then echo "statement greater, ok" ;fi
 if [ 5 -ge 5 ]; then echo "statement greater-equal, ok" ;fi
 if ((5>=5)); then echo "statement greater-equal, ok" ;fi
 if [ 3 -lt 5 ]; then echo "statement less, ok" ;fi
-if [ 1 < 3 ]; then echo "statement less, ok" ;fi
+if [ 3 \< 5 ]; then echo "statement less, ok" ;fi
 if [ 5 -le 5 ]; then echo "statement less-equal, ok" ;fi
 if ((5<=5)); then echo "statement less-equal, ok" ;fi
 # string comparsion 1
