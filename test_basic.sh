@@ -34,7 +34,7 @@ if [ 5 > 3 ]; then echo "statement greater, ok" ;fi
 if [ 5 -ge 5 ]; then echo "statement greater-equal, ok" ;fi
 if ((5>=5)); then echo "statement greater-equal, ok" ;fi
 if [ 3 -lt 5 ]; then echo "statement less, ok" ;fi
-if [ 3 < 5 ]; then echo "statement less, ok" ;fi
+if [ 1 < 3 ]; then echo "statement less, ok" ;fi
 if [ 5 -le 5 ]; then echo "statement less-equal, ok" ;fi
 if ((5<=5)); then echo "statement less-equal, ok" ;fi
 # string comparsion 1
@@ -50,6 +50,18 @@ fi
 [[ "string1" == "string1" ]] && \
     echo "string comparsion 2, ok" || \
     echo "sring comparsion 2, error"
+# if elif else example 1
+var=10
+if [ $var -gt 0 ]
+then
+    echo "var is Positive"
+elif [ $var -eq 0 ]
+then
+    echo "var is Zero"
+else
+    echo "var is Negative"
+fi
+echo "if elif else example 1, ok"
 # number comparsion
 a1=10
 a2=10
@@ -99,10 +111,23 @@ else
 fi
 
 # awk return example 1
-result=$(grep A demo.txt | grep 6|awk {'print $1$2'})
+result=$(grep A awkdemo.txt | grep 6|awk {'print $1$2'})
 if  [ $result = 'A006坦克' ] ;
 then 
     echo "awk return example 1, ok" 
 else 
     echo "awk return example 1, error, counter = $result" 
 fi
+
+# array example 1
+# pass, do nothing :
+test_array=(0 1 2 3 4 5)
+# show array size
+[[ ${#test_array[@]} == 6 ]] && : || echo "array example 1, error"
+check=0
+for element in ${test_array[@]}
+do
+    [[ $element == $check ]] && : || echo "array example 1, error"
+    ((check++))
+done
+echo "array example 1, ok"

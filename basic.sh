@@ -12,5 +12,6 @@ function add_one() {
 
 function show_environment_parameters(){
     #unfinished
+    :
 }
 
