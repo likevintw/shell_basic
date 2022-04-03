@@ -88,3 +88,21 @@ then
 else 
     echo "while 2, error, counter = $counter" 
 fi
+
+# grep return example 1
+result=$(grep 27 grepdemo.txt |grep 02|grep 17 |grep 38)
+if  [ $result = '第111027期07,17,19,24,31,45+38' ] ;
+then 
+    echo "grep return example 1, ok" 
+else 
+    echo "grep return example 1, error, counter = $result" 
+fi
+
+# awk return example 1
+result=$(grep A demo.txt | grep 6|awk {'print $1$2'})
+if  [ $result = 'A006坦克' ] ;
+then 
+    echo "awk return example 1, ok" 
+else 
+    echo "awk return example 1, error, counter = $result" 
+fi

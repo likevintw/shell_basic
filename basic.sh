@@ -9,3 +9,8 @@ function add_one() {
     var=$(($1+1))
     return $var
 }
+
+function show_environment_parameters(){
+    #unfinished
+}
+
